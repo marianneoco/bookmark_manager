@@ -13,3 +13,10 @@ User ---->  Bookmarks ----
       read                |
                           |
 return list<_____________ |
+
+To set up the database
+============
+- connect to psql
+- CREATE DATABASE bookmark_manager;
+- \c bookmark_manager;
+- Run the SQL scripts in the `db/migrations` folder.
