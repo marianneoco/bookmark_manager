@@ -9,6 +9,7 @@ ruby '2.6.5'
 gem 'rack'
 gem 'rake'
 gem 'sinatra'
+gem 'pg'
 
 group :test do
   gem 'capybara'
