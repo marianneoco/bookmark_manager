@@ -19,4 +19,11 @@ To set up the database
 - connect to psql
 - CREATE DATABASE bookmark_manager;
 - \c bookmark_manager;
-- Run the SQL scripts in the `db/migrations` folder.
+- Run the SQL scripts in the `db/migrations` folder - 01_create_bookmarks_table
+
+To set up the test database
+============
+- connect to psql
+- CREATE DATABASE bookmark_manager_test;
+- \c bookmark_manager_test;
+- Run the SQL scripts in the `db/migrations` folder - 02_create_test_bookmarks_table

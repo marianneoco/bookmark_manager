@@ -6,7 +6,12 @@ class BookmarkApp < Sinatra::Base
     "You've found homepage!"
   end
 
-  get '/bookmarks' do
+  get '/bookmarks/new' do
+    erb :'bookmarks/new'
+  end
+
+  post '/bookmarks' do
+    Bookmark.create(params[:url])
     @list = Bookmark.all
     erb :'bookmarks/index'
   end

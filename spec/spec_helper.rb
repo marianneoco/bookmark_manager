@@ -15,6 +15,10 @@ SimpleCov.start
 # AFTER 'SimpleCov.start'
 
 RSpec.configure do |config|
+  config.before(:each) do
+    require 'setup_test_database_helper.rb'
+    clear_table
+  end
   config.after(:suite) do
     puts
     puts "\e[33mHave you considered running rubocop? It will help you improve
@@ -24,6 +28,7 @@ RSpec.configure do |config|
 end
 
 ENV['RACK_ENV'] = 'test'
+ENV['ENVIRONMENT'] = 'test'
 
 # require our Sinatra app file
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
