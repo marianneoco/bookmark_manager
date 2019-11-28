@@ -2,6 +2,9 @@ require 'sinatra/base'
 require './lib/bookmark'
 
 class BookmarkApp < Sinatra::Base
+
+  enable :method_override
+
   get '/' do
     "You've found homepage!"
   end
@@ -15,8 +18,13 @@ class BookmarkApp < Sinatra::Base
     erb :'bookmarks/new'
   end
 
+  delete '/bookmarks' do
+    @delete = Bookmark.delete(params[:title])
+    redirect '/bookmarks'
+  end
+
   post '/bookmarks' do
-    Bookmark.create(params[:url], params[:title])
+    @create = Bookmark.create(params[:url], params[:title])
     redirect '/bookmarks'
   end
 

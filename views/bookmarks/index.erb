@@ -3,3 +3,9 @@
     <li> <a href = "<%=list.url%>"> <%=list.title%> </a> </li>
 <% end %>
 </ul>
+
+<form action = '/bookmarks' method = "post">
+  <input type='hidden' name='_method' value='DELETE'>
+  <input type = "text" name = "title">
+  <input type = "submit" value = "DELETE">
+</form>
