@@ -10,9 +10,10 @@ describe Bookmark do
     expect(Bookmark.all).to eq ["http://www.makersacademy.com", "http://www.google.com", "http://www.destroyallsoftware.com"]
   end
 
-  it "can create a new bookmark" do
+  it "can create a new bookmark with a URL and title" do
     connection = PG.connect( dbname: 'bookmark_manager_test' )
-    Bookmark.create("http://www.bbc.co.uk")
+    Bookmark.create("http://www.bbc.co.uk", "BBC")
     expect(Bookmark.all).to include "http://www.bbc.co.uk"
+    expect(Bookmark.all).to include "BBC"
   end
 end

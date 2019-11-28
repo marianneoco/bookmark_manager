@@ -6,15 +6,20 @@ class BookmarkApp < Sinatra::Base
     "You've found homepage!"
   end
 
+  get '/bookmarks' do
+    @list = Bookmark.all
+    erb :'bookmarks/index'
+  end
+
   get '/bookmarks/new' do
     erb :'bookmarks/new'
   end
 
   post '/bookmarks' do
-    Bookmark.create(params[:url])
-    @list = Bookmark.all
-    erb :'bookmarks/index'
+    Bookmark.create(params[:url], params[:title])
+    redirect '/bookmarks'
   end
+
     # start the server if the ruby file executed directly
     run! if app_file == $0
 end
