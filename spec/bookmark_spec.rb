@@ -12,8 +12,8 @@ describe Bookmark do
 
   it "can create a new bookmark with a URL and title" do
     connection = PG.connect( dbname: 'bookmark_manager_test' )
-    Bookmark.create("http://www.bbc.co.uk", "BBC")
-    expect(Bookmark.all).to include "http://www.bbc.co.uk"
-    expect(Bookmark.all).to include "BBC"
+    bookmark = Bookmark.create("http://www.bbc.co.uk", "BBC")
+    expect(bookmark.link).to eq("http://www.bbc.co.uk")
+    expect(bookmark.title).to eq("BBC")
   end
 end
