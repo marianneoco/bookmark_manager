@@ -3,21 +3,24 @@ require 'pg'
 
 describe Bookmark do
 
-  #need more tests here...
-
   it "can create a new bookmark" do
-    bookmark = Bookmark.new("http://www.bbc.co.uk", "BBC")
+    bookmark = Bookmark.new(1, "http://www.bbc.co.uk", "BBC")
     expect(bookmark).to be_instance_of(Bookmark)
   end
 
   it "can create a new bookmark with a url" do
-    bookmark = Bookmark.new("http://www.bbc.co.uk", "BBC")
+    bookmark = Bookmark.new(1, "http://www.bbc.co.uk", "BBC")
     expect(bookmark.url).to eq("http://www.bbc.co.uk")
   end
 
   it "can create a new bookmark with a title" do
-    bookmark = Bookmark.new("http://www.bbc.co.uk", "BBC")
+    bookmark = Bookmark.new(1, "http://www.bbc.co.uk", "BBC")
     expect(bookmark.title).to eq("BBC")
+  end
+
+  it "can create a new bookmark with an id" do
+  bookmark = Bookmark.new(1, "http://www.bbc.co.uk", "BBC")
+    expect(bookmark.id).to eq(1)
   end
 
   it "it has an all method which returns an array of web addresses" do

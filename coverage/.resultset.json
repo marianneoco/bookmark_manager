@@ -6,6 +6,9 @@
         1,
         null,
         1,
+        null,
+        1,
+        null,
         1,
         1,
         null,
@@ -41,8 +44,9 @@
         1,
         null,
         1,
-        16,
-        16,
+        20,
+        20,
+        20,
         null,
         null,
         1,
@@ -62,6 +66,7 @@
         0,
         null,
         3,
+        3,
         null,
         null,
         1,
@@ -72,12 +77,6 @@
         null,
         2,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       "/Users/student/Documents/GitHub/Week_6/bookmark_manager/spec/bookmark_spec.rb": [
@@ -86,6 +85,11 @@
         null,
         1,
         null,
+        null,
+        null,
+        1,
+        1,
+        1,
         null,
         null,
         1,
@@ -182,11 +186,11 @@
         1,
         null,
         1,
-        11,
-        11,
+        12,
+        12,
         null
       ]
     },
-    "timestamp": 1574958765
+    "timestamp": 1575042476
   }
 }
