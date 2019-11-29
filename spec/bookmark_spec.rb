@@ -37,8 +37,8 @@ describe Bookmark do
   end
 
   it "can delete a bookmark" do
-    Bookmark.create("http://www.bbc.co.uk", "BBC")
-    Bookmark.delete("BBC")
+    bookmark = Bookmark.create("http://www.bbc.co.uk", "BBC")
+    Bookmark.delete(bookmark.id)
     expect(Bookmark.all).to eq []
   end
 

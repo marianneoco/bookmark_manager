@@ -19,12 +19,12 @@ class BookmarkApp < Sinatra::Base
   end
 
   delete '/bookmarks' do
-    Bookmark.delete(params[:title])
+    Bookmark.delete(params[:id])
     redirect '/bookmarks'
   end
 
   post '/bookmarks' do
-    @bookmark = Bookmark.create(params[:url], params[:title])
+    Bookmark.create(params[:url], params[:title])
     redirect '/bookmarks'
   end
 
